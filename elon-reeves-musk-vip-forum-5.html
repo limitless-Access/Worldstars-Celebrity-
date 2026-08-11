@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elon Reeves Musk VIP Forum | Exclusive Membership Application</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Raleway:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void:         #ffffff;
+    --teal-deep:    #0f172a;
+    --teal-mid:     #1d4ed8;
+    --teal-bright:  #2563eb;
+    --gold:         #1d4ed8;
+    --gold-light:   #3b82f6;
+    --gold-mid:     #2563eb;
+    --gold-deep:    #1e40af;
+    --cream-bg:     #ffffff;
+    --cream-light:  #f8fafc;
+    --cream-dark:   #f1f5f9;
+    --white:        #ffffff;
+    --text-dark:    #0f172a;
+    --text-mid:     #1e293b;
+    --text-soft:    #334155;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: linear-gradient(165deg, #eff6ff 0%, #ffffff 40%, #f8fafc 100%);
+    color: var(--text-dark);
+    font-family: 'EB Garamond', serif;
+    font-weight: 700;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 18px 80px;
+    overflow-x: hidden;
+    position: relative;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  #starCanvas {
+    position: fixed; inset: 0;
+    width: 100%; height: 100%;
+    z-index: 0; pointer-events: none;
+  }
+
+  .ambient {
+    position: fixed; border-radius: 50%;
+    filter: blur(150px); pointer-events: none; z-index: 0;
+  }
+  .ambient-1 {
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.18) 0%, transparent 70%);
+    top: -200px; left: -180px;
+    animation: drift1 24s ease-in-out infinite alternate;
+  }
+  .ambient-2 {
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+    bottom: -220px; right: -200px;
+    animation: drift2 28s ease-in-out infinite alternate;
+  }
+  .ambient-3 {
+    width: 550px; height: 550px;
+    background: radial-gradient(circle, rgba(147, 197, 253, 0.2) 0%, transparent 70%);
+    top: 40%; left: 50%;
+    transform: translate(-50%,-50%);
+    animation: pulse3 15s ease-in-out infinite;
+  }
+  @keyframes drift1  { from{transform:translate(0,0)} to{transform:translate(90px,110px)} }
+  @keyframes drift2  { from{transform:translate(0,0)} to{transform:translate(-90px,-110px)} }
+  @keyframes pulse3  { 0%,100%{opacity:0.3;transform:translate(-50%,-50%) scale(1)} 50%{opacity:0.85;transform:translate(-50%,-50%) scale(1.45)} }
+
+  .wrapper {
+    position: relative; z-index: 10;
+    width: 100%; max-width: 820px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+
+  /* ── LOGO ZONE ── */
+  .logo-zone {
+    display: flex; flex-direction: column; align-items: center;
+    margin-top: 20px;
+    margin-bottom: 42px;
+    animation: fadeDown 1.6s cubic-bezier(.22,1,.36,1) 0.15s both;
+  }
+
+  .logo-ring-wrap {
+    position: relative;
+    width: 148px; height: 148px;
+    margin-bottom: 28px;
+  }
+  .ring-outer {
+    position: absolute; inset: 0;
+    border-radius: 50%;
+    border: 1.5px solid transparent;
+    background: conic-gradient(from 0deg,
+      rgba(59,130,246,0.35), rgba(245,230,184,0.95), rgba(59,130,246,0.9),
+      rgba(245,230,184,0.95), rgba(59,130,246,0.35)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out; mask-composite: exclude;
+    animation: rotateCW 18s linear infinite;
+  }
+  .ring-mid {
+    position: absolute; inset: 9px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background: conic-gradient(from 90deg,
+      transparent, rgba(255,255,255,0.55), transparent, rgba(59,130,246,0.75), transparent) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out; mask-composite: exclude;
+    animation: rotateCCW 9s linear infinite;
+  }
+  .ring-inner {
+    position: absolute; inset: 18px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background: conic-gradient(from 180deg,
+      rgba(26,26,26,0.7), rgba(245,230,184,0.85), rgba(20,85,85,0.7),
+      rgba(245,230,184,0.85), rgba(26,26,26,0.7)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out; mask-composite: exclude;
+    animation: rotateCW 12s linear infinite;
+  }
+  .logo-face {
+    position: absolute; inset: 26px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 40% 35%,
+      rgba(219,234,254,0.9) 0%,
+      rgba(37,99,235,0.55) 55%,
+      rgba(29,78,216,0.85) 100%);
+    backdrop-filter: blur(14px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+    box-shadow:
+      inset 0 0 30px rgba(245,230,184,0.18),
+      0 0 55px rgba(59,130,246,0.28),
+      0 12px 45px rgba(0,0,0,0.4);
+    border: 1px solid rgba(245,230,184,0.4);
+  }
+  .logo-star-icon {
+    font-size: 28px; line-height: 1;
+    color: #fff;
+    animation: starPulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 14px rgba(255,255,255,0.9));
+  }
+  .logo-initials {
+    font-family: 'Cinzel', serif;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 3.5px; color: rgba(255,255,255,0.95);
+  }
+
+  .orbit-dot {
+    position: absolute; width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #93c5fd;
+    box-shadow: 0 0 14px 5px rgba(59,130,246,0.7);
+    top: 50%; left: 50%; transform-origin: 0 0;
+  }
+  .orbit-dot:nth-child(1) { animation: orbitDot 9s linear infinite; }
+  .orbit-dot:nth-child(2) { animation: orbitDot 9s linear infinite; animation-delay: -3s; }
+  .orbit-dot:nth-child(3) { animation: orbitDot 9s linear infinite; animation-delay: -6s; }
+
+  @keyframes orbitDot {
+    from { transform: rotate(0deg) translateX(70px) translate(-3px,-3px); }
+    to   { transform: rotate(360deg) translateX(70px) translate(-3px,-3px); }
+  }
+  @keyframes rotateCW  { to{transform:rotate(360deg)} }
+  @keyframes rotateCCW { to{transform:rotate(-360deg)} }
+  @keyframes starPulse {
+    0%,100%{filter:drop-shadow(0 0 8px rgba(59,130,246,0.7))}
+    50%{filter:drop-shadow(0 0 26px rgba(245,230,184,1))}
+  }
+
+  .brand-name {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.2rem, 4.4vw, 1.85rem);
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #0f172a;
+    text-shadow:
+      0 0 30px rgba(59,130,246,0.25),
+      0 2px 8px rgba(0,0,0,0.06);
+    line-height: 1.3; margin-bottom: 10px;
+  }
+
+  .brand-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.98rem, 2.6vw, 1.22rem);
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    color: #334155;
+    text-align: center;
+    margin-bottom: 16px;
+    text-shadow: none;
+  }
+
+  .divider-orn {
+    display: flex; align-items: center; gap: 16px;
+    width: 360px; margin: 14px 0;
+  }
+  .divider-orn .line {
+    flex: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.55), transparent);
+  }
+  .divider-orn .gem {
+    color: #2563eb; font-size: 14px;
+    animation: gemFlicker 2.8s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(59,130,246,0.95));
+  }
+
+  .form-heading {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.78rem, 2.4vw, 0.95rem);
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    color: #1d4ed8;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 16px;
+    text-shadow: none;
+  }
+
+  @keyframes gemFlicker { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  @keyframes fadeDown { from{opacity:0;transform:translateY(-36px)} to{opacity:1;transform:translateY(0)} }
+
+  .brand-info-block {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    border-radius: 6px;
+    padding: 22px 26px;
+    margin: 14px 0 0 0;
+    text-align: center;
+    width: 100%;
+    max-width: 540px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+  .info-block-segment { margin-bottom: 14px; }
+  .info-block-segment:last-child { margin-bottom: 0; }
+  .info-block-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+    color: #1d4ed8;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .info-block-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: #1e293b;
+  }
+  .info-block-text a {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+  }
+  .info-block-text a:hover {
+    border-bottom-color: var(--gold-light);
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.7);
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--cream-bg);
+    width: 100%;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 8px;
+    padding: 52px 52px 48px;
+    position: relative; overflow: hidden;
+    box-shadow:
+      0 45px 110px rgba(0, 0, 0, 0.5),
+      0 14px 45px rgba(12, 12, 12, 0.2),
+      inset 0 1px 0 rgba(255,255,255,0.7);
+    animation: fadeUp 1.7s cubic-bezier(.22,1,.36,1) 0.3s both;
+  }
+  @media(max-width:600px){ .card{ padding:32px 18px 36px; } }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #1e40af, #1d4ed8, #3b82f6, #1d4ed8, #1e40af);
+    pointer-events: none;
+  }
+
+  .corner { position: absolute; width: 54px; height: 54px; }
+  .corner-tl { top: 20px; left: 20px; border-top: 1.5px solid rgba(59, 130, 246, 0.4); border-left: 1.5px solid rgba(59, 130, 246, 0.4); }
+  .corner-tr { top: 20px; right: 20px; border-top: 1.5px solid rgba(59, 130, 246, 0.4); border-right: 1.5px solid rgba(59, 130, 246, 0.4); }
+  .corner-bl { bottom: 20px; left: 20px; border-bottom: 1.5px solid rgba(59, 130, 246, 0.4); border-left: 1.5px solid rgba(59, 130, 246, 0.4); }
+  .corner-br { bottom: 20px; right: 20px; border-bottom: 1.5px solid rgba(59, 130, 246, 0.4); border-right: 1.5px solid rgba(59, 130, 246, 0.4); }
+
+  .card-sweep {
+    position: absolute; top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.05), transparent);
+    animation: cardSweep 11s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes cardSweep { 0%{left:-100%} 50%{left:200%} 100%{left:200%} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(52px)} to{opacity:1;transform:translateY(0)} }
+
+  .date-display {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem; letter-spacing: 0.26em;
+    color: var(--text-soft);
+    text-align: right;
+    margin-bottom: 32px;
+    display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+  }
+  .date-display::before { content:'✦'; color: var(--gold); font-size:9px; }
+
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.76rem; font-weight: 800;
+    letter-spacing: 0.3em; color: #fff;
+    background: linear-gradient(135deg, #1e40af, #1d4ed8);
+    padding: 9px 20px;
+    border-radius: 3px 0 12px 0;
+    text-transform: uppercase;
+    display: inline-flex; align-items: center;
+    margin: 38px 0 22px;
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.15);
+    border-left: 3px solid var(--gold);
+  }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media(max-width:560px){ .grid-2{ grid-template-columns:1fr; } }
+
+  .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+
+  label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.68rem; font-weight: 800;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--text-mid);
+  }
+
+  .input-wrap { position: relative; }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  select, textarea {
+    width: 100%;
+    background: var(--cream-light);
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    padding: 13px 18px;
+    border-radius: 4px;
+    color: var(--text-dark);
+    font-family: 'EB Garamond', serif;
+    font-size: 1.08rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    transition: border-color .3s, box-shadow .3s, background .3s;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--gold);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+  }
+  input::placeholder, textarea::placeholder {
+    color: rgba(10, 18, 18, 0.32);
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+
+  select {
+    appearance: none; cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230A2F2F' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 44px;
+  }
+
+  .input-icon {
+    position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+    font-size: 12px; color: var(--gold-deep); opacity: 0.75; pointer-events: none;
+  }
+  .has-icon input, .has-icon select { padding-left: 42px; }
+
+  textarea { resize: vertical; min-height: 110px; line-height: 1.65; }
+
+  /* Passport */
+  .passport-container {
+    display: flex; flex-direction: column; align-items: center;
+    margin-bottom: 22px; width: 100%;
+  }
+  .passport-frame-slot {
+    width: 120px; height: 150px;
+    background: var(--cream-dark);
+    border: 2px dashed rgba(212, 175, 55, 0.45);
+    border-radius: 6px;
+    position: relative; overflow: hidden; cursor: pointer;
+    box-shadow: 0 8px 24px rgba(12, 12, 12, 0.1);
+    transition: all 0.3s;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .passport-frame-slot:hover {
+    border-color: var(--gold);
+    background: #fff;
+    transform: translateY(-2px);
+  }
+  .passport-frame-slot.active-capture {
+    border-style: solid; border-color: var(--teal-mid); cursor: default;
+  }
+  .passport-icon { font-size: 22px; color: var(--gold-deep); margin-bottom: 4px; opacity: 0.8; }
+  .passport-prompt-txt {
+    font-family: 'Cinzel', serif; font-size: 0.52rem;
+    letter-spacing: 0.12em; color: var(--text-mid);
+    text-transform: uppercase; text-align: center; padding: 0 6px; line-height: 1.3;
+  }
+  .passport-video-stream, .passport-output-image {
+    width: 100%; height: 100%; object-fit: cover; display: none; transform: scaleX(-1);
+  }
+  .passport-face-overlay {
+    position: absolute; inset: 0; pointer-events: none; display: none;
+  }
+  .passport-face-overlay::after {
+    content: '';
+    position: absolute; top: 45%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 68px; height: 92px;
+    border: 1.5px dashed rgba(245, 230, 184, 0.85);
+    border-radius: 50% 50% 45% 45%;
+    box-shadow: 0 0 0 400px rgba(12, 12, 12, 0.5);
+  }
+  .passport-action-controls {
+    display: none; gap: 10px; margin-top: 12px; width: 100%; max-width: 220px;
+  }
+  .passport-action-btn {
+    flex: 1; padding: 8px;
+    font-family: 'Cinzel', serif; font-size: 0.58rem;
+    letter-spacing: 0.14em; font-weight: 700;
+    border-radius: 4px; cursor: pointer; text-transform: uppercase;
+    transition: all 0.25s; text-align: center;
+  }
+  .passport-action-btn.snap {
+    background: linear-gradient(135deg, #1A1A1A, #0C0C0C);
+    color: #fff; border: none;
+  }
+  .passport-action-btn.snap:hover { background: var(--teal-deep); }
+  .passport-action-btn.retake {
+    background: transparent; color: var(--text-soft);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+  }
+  .passport-action-btn.retake:hover { background: var(--cream-dark); color: var(--text-dark); }
+
+  /* Tiers */
+  .horizontal-tiers-container { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+  .horizontal-tier-row {
+    display: flex; justify-content: space-around; align-items: flex-start;
+    background: var(--cream-dark); padding: 20px 10px 16px;
+    border-radius: 6px; border: 1px solid rgba(59, 130, 246, 0.25);
+  }
+  .square-tier-box {
+    display: flex; flex-direction: column; align-items: center; gap: 7px;
+    cursor: pointer; transition: transform 0.25s; flex: 1; max-width: 108px;
+  }
+  .square-tier-box:hover { transform: scale(1.07); }
+  .tier-color-square {
+    width: 52px; height: 52px; border-radius: 6px;
+    box-shadow: 0 5px 16px rgba(0,0,0,0.2);
+    border: 2px solid transparent; transition: all 0.3s;
+  }
+  .square-tier-box.selected-tier .tier-color-square {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4), 0 5px 18px rgba(0,0,0,0.3);
+  }
+  .square-tier-label {
+    font-family: 'Cinzel', serif; font-size: 0.6rem;
+    letter-spacing: 0.08em; color: var(--text-dark);
+    text-transform: uppercase; font-weight: 800; text-align: center; line-height: 1.25;
+  }
+  .square-tier-price {
+    font-family: 'Cinzel', serif; font-size: 0.7rem;
+    letter-spacing: 0.04em; color: var(--gold-deep); font-weight: 700; text-align: center;
+  }
+  .tier-statusBar {
+    font-family: 'Cinzel', serif; font-size: 0.7rem;
+    letter-spacing: 0.12em; color: #1d4ed8;
+    text-align: center; font-weight: 700; text-transform: uppercase;
+    background: rgba(59, 130, 246, 0.08);
+    padding: 8px 12px; border-radius: 4px;
+    border: 1px dashed rgba(59, 130, 246, 0.35);
+  }
+
+  /* Modals base */
+  .tier-modal-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(2, 6, 6, 0.88);
+    backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
+    z-index: 10000; align-items: center; justify-content: center; padding: 22px;
+  }
+  .tier-modal-overlay.open { display: flex; }
+  .tier-modal-inner {
+    background: var(--cream-bg);
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 10px; padding: 44px 36px;
+    max-width: 520px; width: 100%;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    box-shadow: 0 55px 130px rgba(0, 0, 0, 0.6);
+    position: relative;
+    animation: modalSetup 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+  @keyframes modalSetup {
+    from { transform: scale(0.88) translateY(40px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+  }
+  .tier-modal-inner::after {
+    content: ''; position: absolute; inset: 12px;
+    border: 1px dashed rgba(59, 130, 246, 0.22);
+    pointer-events: none; border-radius: 6px;
+  }
+  .tier-modal-badge {
+    font-family: 'Cinzel', serif; font-size: 0.74rem;
+    letter-spacing: 0.34em; color: var(--gold-deep); text-transform: uppercase;
+  }
+  .tier-modal-title {
+    font-family: 'Cinzel Decorative', serif; font-size: 1.55rem;
+    color: var(--teal-deep); text-align: center; letter-spacing: 0.06em;
+  }
+  .tier-modal-price {
+    font-family: 'Cinzel', serif; font-size: 1.3rem;
+    color: var(--gold-deep); letter-spacing: 0.08em; font-weight: 700;
+    background: rgba(59, 130, 246, 0.12);
+    padding: 6px 22px; border-radius: 4px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+  .tier-modal-body {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.18rem;
+    color: var(--text-dark); text-align: left; line-height: 1.65;
+    font-weight: 500; padding: 0 8px; width: 100%;
+  }
+  .terms-list-layout { max-height: 250px; overflow-y: auto; padding-right: 10px; }
+  .terms-list-layout::-webkit-scrollbar { width: 4px; }
+  .terms-list-layout::-webkit-scrollbar-track { background: var(--cream-dark); }
+  .terms-list-layout::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+  .terms-item-row { margin-bottom: 12px; display: flex; gap: 10px; align-items: flex-start; }
+  .terms-item-bullet { color: var(--gold); font-size: 0.85rem; margin-top: 2px; }
+  .terms-item-text { flex: 1; }
+
+  .tier-modal-actions { display: flex; gap: 14px; width: 100%; margin-top: 8px; z-index: 5; }
+  .tier-modal-btn {
+    flex: 1; padding: 13px;
+    font-family: 'Cinzel', serif; font-size: 0.7rem;
+    letter-spacing: 0.2em; font-weight: 700;
+    border-radius: 4px; cursor: pointer; transition: all 0.3s; text-align: center;
+  }
+  .tier-modal-btn.select-action {
+    background: linear-gradient(135deg, #1A1A1A, #0C0C0C);
+    color: #fff; border: none;
+    box-shadow: 0 5px 18px rgba(26, 26, 26, 0.35);
+  }
+  .tier-modal-btn.select-action:hover { background: var(--teal-deep); transform: translateY(-2px); }
+  .tier-modal-btn.cancel-action {
+    background: transparent; color: var(--text-soft);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+  }
+  .tier-modal-btn.cancel-action:hover {
+    background: rgba(212, 175, 55, 0.1); color: var(--text-dark);
+  }
+
+  .terms-trigger-container {
+    background: var(--cream-dark);
+    border: 1px solid rgba(59, 130, 246, 0.28);
+    border-radius: 4px; padding: 15px 18px; margin-top: 22px;
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; transition: all 0.3s;
+  }
+  .terms-trigger-container:hover {
+    border-color: var(--gold); background: #fff; transform: translateY(-1px);
+  }
+  .terms-trigger-left { display: flex; flex-direction: column; gap: 3px; }
+  .terms-trigger-title {
+    font-family: 'Cinzel', serif; font-size: 0.74rem;
+    letter-spacing: 0.16em; font-weight: 700; color: var(--text-dark); text-transform: uppercase;
+  }
+  .terms-trigger-subtitle {
+    font-family: 'Raleway', sans-serif; font-size: 0.62rem;
+    letter-spacing: 0.04em; color: var(--text-soft); font-weight: 500;
+  }
+  .terms-trigger-arrow { color: var(--gold); font-size: 0.9rem; font-weight: bold; transition: transform 0.3s; }
+  .terms-trigger-container:hover .terms-trigger-arrow { transform: translateX(4px); }
+
+  .terms-checkbox-group {
+    display: flex; align-items: center; gap: 10px; margin-top: 12px; padding-left: 2px;
+  }
+  .terms-checkbox-input {
+    appearance: none; -webkit-appearance: none;
+    width: 16px; height: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 2px; background: var(--cream-light);
+    cursor: pointer; position: relative; outline: none;
+    transition: background 0.25s, border-color 0.25s; flex-shrink: 0;
+  }
+  .terms-checkbox-input:checked {
+    background: var(--gold); border-color: var(--gold-deep);
+  }
+  .terms-checkbox-input:checked::after {
+    content: '✓'; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%); color: #fff; font-size: 10px; font-weight: bold;
+  }
+  .terms-checkbox-label {
+    font-family: 'Raleway', sans-serif; font-size: 0.68rem;
+    font-weight: 700; letter-spacing: 0.02em; color: var(--text-mid);
+    cursor: pointer; user-select: none;
+  }
+
+  /* Signature */
+  .sig-section { margin-top: 4px; }
+  .sig-container {
+    position: relative; border: 1px solid rgba(59, 130, 246, 0.28);
+    border-radius: 4px; background: var(--cream-light); overflow: hidden;
+  }
+  .sig-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 9px 14px; border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    background: var(--cream-dark);
+  }
+  .sig-label-inner {
+    font-family: 'Cinzel', serif; font-size: 0.54rem;
+    letter-spacing: 0.24em; color: var(--text-soft); text-transform: uppercase;
+  }
+  .sig-controls { display: flex; gap: 10px; align-items: center; }
+  .sig-color-btn {
+    width: 16px; height: 16px; border-radius: 50%;
+    border: 1.5px solid transparent; cursor: pointer; transition: transform 0.2s;
+  }
+  .sig-color-btn:hover { transform: scale(1.2); }
+  .sig-color-btn.selected { border-color: var(--text-dark); box-shadow: 0 0 0 1px #fff; transform: scale(1.1); }
+  .sig-clear-btn {
+    font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.18em;
+    color: var(--text-soft); background: var(--cream-light);
+    border: 1px solid rgba(59, 130, 246, 0.3); cursor: pointer;
+    text-transform: uppercase; transition: all 0.25s; padding: 3px 7px; border-radius: 2px;
+  }
+  .sig-clear-btn:hover { color: var(--text-dark); background: #fff; border-color: var(--gold); }
+  #signatureCanvas { display: block; width: 100%; height: 150px; cursor: crosshair; touch-action: none; }
+  .sig-baseline {
+    position: absolute; bottom: 36px; left: 18px; right: 18px; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.25), transparent);
+    pointer-events: none;
+  }
+  .sig-placeholder {
+    position: absolute; bottom: 42px; left: 0; right: 0; text-align: center;
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.88rem;
+    color: rgba(10, 18, 18, 0.28); pointer-events: none; transition: opacity 0.3s;
+  }
+  .sig-footer-note {
+    padding: 7px 14px; border-top: 1px solid rgba(59, 130, 246, 0.15);
+    display: flex; justify-content: space-between; align-items: center; background: var(--cream-dark);
+  }
+  .sig-note-text {
+    font-family: 'EB Garamond', serif; font-size: 0.74rem; font-style: italic;
+    color: var(--text-soft); letter-spacing: 0.03em;
+  }
+  .sig-thickness { display: flex; align-items: center; gap: 7px; }
+  .sig-thickness-label {
+    font-family: 'Cinzel', serif; font-size: 0.48rem;
+    letter-spacing: 0.18em; color: var(--text-soft); text-transform: uppercase;
+  }
+  .thick-btn {
+    border-radius: 50%; background: rgba(59, 130, 246, 0.4);
+    cursor: pointer; border: 1px solid transparent; transition: all 0.2s;
+  }
+  .thick-btn.s { width:7px; height:7px; }
+  .thick-btn.m { width:11px; height:11px; }
+  .thick-btn.l { width:15px; height:15px; }
+  .thick-btn:hover { background: rgba(212, 175, 55, 0.6); }
+  .thick-btn.selected { background: var(--gold); border-color: #fff; box-shadow: 0 0 0 1px var(--gold-deep); }
+
+  .btn-wrap { margin-top: 42px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .submit-btn {
+    position: relative;
+    font-family: 'Cinzel', serif; font-size: 0.82rem; font-weight: 700;
+    letter-spacing: 0.32em; text-transform: uppercase; color: #fff;
+    padding: 18px 64px; border: none; border-radius: 4px; cursor: pointer; overflow: hidden;
+    background: linear-gradient(125deg, #1e40af 0%, #1d4ed8 45%, #2563eb 100%);
+    transition: all 0.4s;
+    box-shadow: 0 7px 30px rgba(12, 12, 12, 0.4), 0 0 0 1px rgba(59,130,246,0.25);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.35);
+  }
+  .submit-btn:disabled { opacity: 0.65; cursor: not-allowed; }
+  .submit-btn::before {
+    content:''; position: absolute; top:-50%; left:-65%; width:50%; height:200%;
+    background: linear-gradient(90deg, transparent, rgba(245,230,184,0.22), transparent);
+    transform: skewX(-20deg); transition: left 0.7s ease;
+  }
+  .submit-btn:hover {
+    background: linear-gradient(125deg, #1d4ed8 0%, #1e3a8a 100%);
+    box-shadow: 0 9px 36px rgba(12, 12, 12, 0.5), 0 0 0 1px rgba(59,130,246,0.45);
+    transform: translateY(-2px);
+  }
+  .submit-btn:hover::before { left: 165%; }
+  .submit-btn:active { transform: translateY(1px); }
+
+  .fine-print {
+    font-family: 'EB Garamond', serif; font-style: italic;
+    font-size: 0.86rem; color: var(--text-soft);
+    letter-spacing: 0.07em; text-align: center; opacity: 0.8;
+  }
+  .error-banner {
+    display: none; background: rgba(200,74,74,0.1);
+    border: 1px solid rgba(200,74,74,0.35); color: #a83838;
+    border-radius: 4px; padding: 11px 16px;
+    font-family: 'Raleway', sans-serif; font-size: 0.8rem; text-align: center; margin-top: 14px;
+  }
+  .card-footer-orn {
+    text-align: center; margin-top: 40px; color: var(--gold);
+    font-size: 14px; letter-spacing: 16px; opacity: 0.5;
+    animation: footerPulse 4.5s ease-in-out infinite;
+  }
+  @keyframes footerPulse { 0%,100%{opacity:0.28} 50%{opacity:0.7} }
+
+  /* ── SPIN / PROCESSING OVERLAY ── */
+  .process-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+    z-index: 20000; align-items: center; justify-content: center;
+    flex-direction: column; gap: 28px;
+  }
+  .process-overlay.show { display: flex; }
+  .process-spinner {
+    width: 72px; height: 72px;
+    border: 3px solid rgba(59, 130, 246, 0.2);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spinLux 0.9s linear infinite;
+  }
+  @keyframes spinLux { to { transform: rotate(360deg); } }
+  .process-text {
+    font-family: 'Cinzel', serif; font-size: 0.9rem;
+    letter-spacing: 0.35em; color: #93c5fd;
+    text-transform: uppercase; text-align: center;
+  }
+
+  /* ── POST-SUBMIT CONTAINER ── */
+  .post-submit-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
+    z-index: 15000; align-items: center; justify-content: center; padding: 22px;
+  }
+  .post-submit-overlay.show { display: flex; }
+  .post-submit-box {
+    background: var(--cream-bg);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 10px; padding: 48px 40px;
+    max-width: 520px; width: 100%;
+    display: flex; flex-direction: column; align-items: center; gap: 20px;
+    box-shadow: 0 55px 130px rgba(0,0,0,0.6);
+    position: relative;
+    animation: modalSetup 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+  .post-submit-box::after {
+    content: ''; position: absolute; inset: 12px;
+    border: 1px dashed rgba(59, 130, 246, 0.22);
+    pointer-events: none; border-radius: 6px;
+  }
+  .post-submit-icon {
+    font-size: 42px; color: var(--gold);
+    filter: drop-shadow(0 0 16px rgba(59,130,246,0.6));
+  }
+  .post-submit-title {
+    font-family: 'Cinzel Decorative', serif; font-size: 1.5rem;
+    color: var(--teal-deep); letter-spacing: 0.12em; text-align: center;
+  }
+  .post-submit-msg {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+    color: var(--text-dark); text-align: center; line-height: 1.6; font-weight: 500;
+  }
+  .vip-code-highlight {
+    font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 700;
+    color: var(--gold-deep); background: rgba(59, 130, 246, 0.12);
+    padding: 8px 24px; border-radius: 4px; display: inline-block; margin: 8px 0;
+    border: 1px solid rgba(59, 130, 246, 0.35); letter-spacing: 0.12em;
+  }
+  .make-payment-btn {
+    margin-top: 8px; padding: 16px 48px;
+    font-family: 'Cinzel', serif; font-size: 0.78rem;
+    letter-spacing: 0.28em; font-weight: 700; color: #fff;
+    background: linear-gradient(125deg, #0C0C0C, #1A1A1A 50%, #2A2A2A);
+    border: none; border-radius: 4px; cursor: pointer;
+    box-shadow: 0 6px 24px rgba(12,12,12,0.35), 0 0 0 1px rgba(59,130,246,0.3);
+    transition: all 0.3s; text-transform: uppercase;
+  }
+  .make-payment-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(12,12,12,0.45), 0 0 0 1px rgba(59,130,246,0.5);
+  }
+
+  /* ── PAYMENT OPTIONS DROPDOWN ── */
+  .payment-options {
+    display: none; width: 100%; margin-top: 8px;
+    flex-direction: column; gap: 10px;
+  }
+  .payment-options.open { display: flex; }
+  .payment-opt-btn {
+    width: 100%; padding: 14px 18px;
+    font-family: 'Cinzel', serif; font-size: 0.72rem;
+    letter-spacing: 0.18em; font-weight: 700; text-transform: uppercase;
+    color: var(--text-dark); background: var(--cream-dark);
+    border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 4px;
+    cursor: pointer; transition: all 0.25s; text-align: left;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .payment-opt-btn:hover {
+    background: #fff; border-color: var(--gold);
+    transform: translateX(4px); box-shadow: 0 4px 16px rgba(59,130,246,0.15);
+  }
+  .payment-opt-icon { font-size: 1.1rem; color: var(--gold); }
+
+  /* ── FINAL MESSAGE INBOX ── */
+  .inbox-message {
+    display: none; width: 100%; margin-top: 12px;
+    background: linear-gradient(135deg, rgba(12,12,12,0.06), rgba(59,130,246,0.08));
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    border-radius: 6px; padding: 22px 20px;
+    text-align: left; position: relative;
+  }
+  .inbox-message.show { display: block; animation: fadeInMsg 0.5s ease; }
+  @keyframes fadeInMsg { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+  .inbox-header {
+    font-family: 'Cinzel', serif; font-size: 0.65rem;
+    letter-spacing: 0.25em; color: var(--gold-deep);
+    text-transform: uppercase; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .inbox-body {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+    color: var(--text-dark); line-height: 1.65; font-weight: 500;
+  }
+  .inbox-status {
+    margin-top: 14px; padding: 10px 14px;
+    background: rgba(59, 130, 246, 0.12);
+    border-left: 3px solid var(--gold);
+    font-family: 'Raleway', sans-serif; font-size: 0.78rem;
+    color: var(--text-mid); letter-spacing: 0.03em;
+  }
+  .inbox-status.confirmed {
+    background: rgba(20, 120, 80, 0.12);
+    border-left-color: #1a8a5c;
+    color: #0d5c3d;
+  }
+
+  .spinner {
+    display: inline-block; width: 14px; height: 14px;
+    border: 2px solid rgba(255,255,255,0.35);
+    border-top-color: #fff; border-radius: 50%;
+    animation: spinLux 0.7s linear infinite;
+    margin-right: 8px; vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="starCanvas"></canvas>
+<div class="ambient ambient-1"></div>
+<div class="ambient ambient-2"></div>
+<div class="ambient ambient-3"></div>
+
+<!-- Processing / Spin Overlay -->
+<div class="process-overlay" id="processOverlay">
+  <div class="process-spinner"></div>
+  <div class="process-text" id="processText">Processing…</div>
+</div>
+
+<!-- Post-submit + Payment Flow Overlay -->
+<div class="post-submit-overlay" id="postSubmitOverlay">
+  <div class="post-submit-box">
+    <div class="post-submit-icon">✦</div>
+    <div class="post-submit-title">Application Received</div>
+    <div class="post-submit-msg" id="postSubmitMsg">
+      Your exclusive VIP code is <div class="vip-code-highlight" id="displayVipCode">00000</div>
+      Complete your registration by making payment.
+    </div>
+
+    <button class="make-payment-btn" id="makePaymentBtn" onclick="revealPaymentOptions()">Make Payment</button>
+
+    <div class="payment-options" id="paymentOptions">
+      <button class="payment-opt-btn" onclick="selectPayment('bank')">
+        <span class="payment-opt-icon">🏦</span> Request for Bank Details
+      </button>
+      <button class="payment-opt-btn" onclick="selectPayment('crypto')">
+        <span class="payment-opt-icon">₿</span> Request for Crypto Wallet Address
+      </button>
+      <button class="payment-opt-btn" onclick="selectPayment('giftcard')">
+        <span class="payment-opt-icon">🎁</span> Pay with Gift Card
+      </button>
+    </div>
+
+    <div class="inbox-message" id="inboxMessage">
+      <div class="inbox-header">
+        <span>✉</span> Secure Message from Management
+      </div>
+      <div class="inbox-body" id="inboxBody">
+        Your application has been submitted successfully.<br><br>
+        The payment option you requested will be sent to you within a 5-minute interval.
+      </div>
+      <div class="inbox-status" id="inboxStatus">
+        Awaiting confirmation from management…
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tier Modal -->
+<div class="tier-modal-overlay" id="tierModalOverlay">
+  <div class="tier-modal-inner">
+    <div class="tier-modal-badge" id="modalTierBadge">Tier I</div>
+    <div class="tier-modal-title" id="modalTierTitle">Luminary</div>
+    <div class="tier-modal-price" id="modalTierPrice">$2,100</div>
+    <div class="tier-modal-body" id="modalTierDesc">Exclusive digital access, priority pre-sale invitations & private content archives</div>
+    <div class="tier-modal-actions">
+      <button type="button" class="tier-modal-btn cancel-action" onclick="closeTierModal()">CANCEL</button>
+      <button type="button" class="tier-modal-btn select-action" id="modalSelectBtn">SELECT</button>
+    </div>
+  </div>
+</div>
+
+<!-- Terms Modal -->
+<div class="tier-modal-overlay" id="termsModalOverlay">
+  <div class="tier-modal-inner">
+    <div class="tier-modal-badge">FORUM PROTOCOLS</div>
+    <div class="tier-modal-title">Terms & Conditions</div>
+    <div class="tier-modal-body terms-list-layout">
+      <div class="terms-item-row"><span class="terms-item-bullet">✦</span><span class="terms-item-text">Applicant must be at least 18 years of age.</span></div>
+      <div class="terms-item-row"><span class="terms-item-bullet">✦</span><span class="terms-item-text">Applicant must be a law-abiding citizen of their country of residence.</span></div>
+      <div class="terms-item-row"><span class="terms-item-bullet">✦</span><span class="terms-item-text">All members are expected to uphold the highest standards of discretion and respect.</span></div>
+      <div class="terms-item-row"><span class="terms-item-bullet">✦</span><span class="terms-item-text">Submission of false information will result in immediate disqualification.</span></div>
+      <div class="terms-item-row"><span class="terms-item-bullet">✦</span><span class="terms-item-text">Full cooperation with the Elon Reeves Musk VIP Forum management is required.</span></div>
+      <div class="terms-item-row"><span class="terms-item-bullet">✦</span><span class="terms-item-text">Delayed membership fees may result in immediate suspension of privileges.</span></div>
+      <div class="terms-item-row"><span class="terms-item-bullet">✦</span><span class="terms-item-text">Operations adhere strictly to the laws and constitution of the applicant’s country.</span></div>
+    </div>
+    <div class="tier-modal-actions">
+      <button type="button" class="tier-modal-btn select-action" style="width:100%; flex:none;" onclick="acceptTermsViaModal()">ACCEPT & CLOSE</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  </div>
+
+  <div class="logo-zone">
+    <div class="logo-ring-wrap">
+      <div class="ring-outer"></div>
+      <div class="ring-mid"></div>
+      <div class="ring-inner"></div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-dot"></div>
+      <div class="orbit-dot"></div>
+      <div class="logo-face">
+        <div class="logo-star-icon">✦</div>
+        <div class="logo-initials">ERM</div>
+      </div>
+    </div>
+
+    <div class="brand-name">Elon Reeves Musk<br>VIP Forum</div>
+    <div class="brand-tagline">✦ &nbsp; An Invitation to the Inner Circle &nbsp; ✦</div>
+    <div class="divider-orn">
+      <div class="line"></div>
+      <div class="gem">◆</div>
+      <div class="line"></div>
+    </div>
+
+    <div class="brand-info-block">
+      <div class="info-block-segment">
+        <div class="info-block-title">Private Concierge</div>
+        <div class="info-block-text">
+          Email: <a href="mailto:Musk77812@gmail.com">Musk77812@gmail.com</a> &nbsp;|&nbsp;
+          Telegram: <a href="https://t.me/Privatechat77777777" target="_blank" rel="noopener noreferrer">t.me/Privatechat77777777</a>
+        </div>
+      </div>
+      <div class="info-block-segment">
+        <div class="info-block-title">Headquarters</div>
+        <div class="info-block-text">
+          Private Suite — Hollywood Blvd & Highland Ave, Los Angeles, California
+        </div>
+      </div>
+    </div>
+
+    <div class="form-heading">Exclusive Membership Application</div>
+  </div>
+
+  <div class="card">
+    <div class="card-sweep"></div>
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <div class="date-display" id="liveDateDisplay"></div>
+
+    <form id="vipForm" novalidate>
+
+      <div class="section-label">Personal Details</div>
+
+      <div class="passport-container">
+        <label style="margin-bottom: 8px;">Real-Time Identity Verification</label>
+        <div class="passport-frame-slot" id="passportFrame" onclick="initiateCamera()">
+          <div id="passportStaticUi" style="text-align:center; display:block;">
+            <div class="passport-icon">📷</div>
+            <div class="passport-prompt-txt">Open Camera</div>
+          </div>
+          <video id="passportVideo" class="passport-video-stream" autoplay playsinline></video>
+          <div id="passportFaceGuide" class="passport-face-overlay"></div>
+          <img id="passportOutput" class="passport-output-image" alt="Identity Capture">
+        </div>
+        <div class="passport-action-controls" id="passportControls">
+          <button type="button" class="passport-action-btn snap" onclick="captureSnapshot()">Capture</button>
+          <button type="button" class="passport-action-btn retake" onclick="resetCameraFeed()">Retake</button>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="fullName">Full Legal Name</label>
+          <div class="input-wrap has-icon">
+            <span class="input-icon">◈</span>
+            <input type="text" id="fullName" placeholder="Your full legal name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <div class="input-wrap has-icon">
+            <span class="input-icon">◈</span>
+            <select id="gender" required>
+              <option value="" disabled selected>Select gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Non-binary</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <div class="input-wrap">
+            <input type="date" id="dob" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="nationality">Nationality</label>
+          <div class="input-wrap has-icon">
+            <span class="input-icon">◈</span>
+            <input type="text" id="nationality" placeholder="Country of origin" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <div class="input-wrap has-icon">
+            <span class="input-icon">◈</span>
+            <input type="text" id="phone" placeholder="0000000000" oninput="this.value=this.value.replace(/[^0-9]/g,'');" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <div class="input-wrap has-icon">
+            <span class="input-icon">◈</span>
+            <input type="email" id="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label">Select Membership Tier</div>
+      <div class="horizontal-tiers-container">
+        <div class="horizontal-tier-row">
+          <div class="square-tier-box selected-tier" id="boxTier1" onclick="openTierPopup(1)">
+            <div class="tier-color-square" style="background: linear-gradient(145deg, #1e3c72, #2a5298);"></div>
+            <div class="square-tier-label">Tier I<br>Luminary</div>
+            <div class="square-tier-price">$2,100</div>
+          </div>
+          <div class="square-tier-box" id="boxTier2" onclick="openTierPopup(2)">
+            <div class="tier-color-square" style="background: linear-gradient(145deg, #0575e6, #00c9a7);"></div>
+            <div class="square-tier-label">Tier II<br>Prestige</div>
+            <div class="square-tier-price">$3,000</div>
+          </div>
+          <div class="square-tier-box" id="boxTier3" onclick="openTierPopup(3)">
+            <div class="tier-color-square" style="background: linear-gradient(145deg, #c0392b, #8e1b1b);"></div>
+            <div class="square-tier-label">Tier III<br>Elite</div>
+            <div class="square-tier-price">$4,800</div>
+          </div>
+          <div class="square-tier-box" id="boxTier4" onclick="openTierPopup(4)">
+            <div class="tier-color-square" style="background: linear-gradient(145deg, #b8860b, #daa520);"></div>
+            <div class="square-tier-label">Tier IV<br>Icon Circle</div>
+            <div class="square-tier-price">$6,000</div>
+          </div>
+        </div>
+        <div class="tier-statusBar" id="tierStatusBar">Selected: Tier I — Luminary · $2,100</div>
+        <input type="hidden" id="selectedTierInput" value="Tier I — Luminary · $2,100">
+      </div>
+
+      <div class="section-label">Affinity Statement</div>
+      <div class="form-group">
+        <label for="celebrity">Primary Interest or Focus</label>
+        <div class="input-wrap has-icon">
+          <span class="input-icon">✦</span>
+          <input type="text" id="celebrity" placeholder="e.g. innovation, space exploration, future technologies" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="appDate">Application Date</label>
+        <div class="input-wrap">
+          <input type="date" id="appDate" readonly style="cursor:default;opacity:0.7;">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="devotion">Why do you seek membership in the Elon Reeves Musk VIP Forum?</label>
+        <textarea id="devotion" placeholder="Share your vision, aspirations, and the value you hope to bring to this exclusive circle…" required></textarea>
+      </div>
+
+      <div class="section-label sig-section">Applicant Signature</div>
+      <div class="form-group">
+        <label>Draw Your Signature Below</label>
+        <div class="sig-container">
+          <div class="sig-header">
+            <span class="sig-label-inner">◈ &nbsp; Sign within the field</span>
+            <div class="sig-controls">
+              <div class="sig-color-btn selected" style="background:#0C0C0C;" data-color="#0C0C0C" onclick="setColor(this)"></div>
+              <div class="sig-color-btn" style="background:#1A1A1A;" data-color="#1A1A1A" onclick="setColor(this)"></div>
+              <div class="sig-color-btn" style="background:#8B7355;" data-color="#8B7355" onclick="setColor(this)"></div>
+              <button class="sig-clear-btn" type="button" onclick="clearSignature()">✕ Clear</button>
+            </div>
+          </div>
+          <div style="position:relative;">
+            <canvas id="signatureCanvas"></canvas>
+            <div class="sig-baseline"></div>
+            <div class="sig-placeholder" id="sigPlaceholder">Sign here…</div>
+          </div>
+          <div class="sig-footer-note">
+            <span class="sig-note-text">By signing, you confirm all information provided is truthful</span>
+            <div class="sig-thickness">
+              <span class="sig-thickness-label">Weight</span>
+              <div class="thick-btn s selected" data-size="1.5" onclick="setThickness(this)"></div>
+              <div class="thick-btn m" data-size="2.8" onclick="setThickness(this)"></div>
+              <div class="thick-btn l" data-size="4.5" onclick="setThickness(this)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="terms-trigger-container" onclick="openTermsModal()">
+        <div class="terms-trigger-left">
+          <div class="terms-trigger-title">Terms & Conditions</div>
+          <div class="terms-trigger-subtitle">Review the Forum protocols before proceeding</div>
+        </div>
+        <div class="terms-trigger-arrow">❯</div>
+      </div>
+      
+      <div class="terms-checkbox-group">
+        <input type="checkbox" id="termsAgreementCheckbox" class="terms-checkbox-input">
+        <label for="termsAgreementCheckbox" class="terms-checkbox-label">I fully accept the Elon Reeves Musk VIP Forum terms and protocols</label>
+      </div>
+
+      <div class="btn-wrap">
+        <button type="button" class="submit-btn" id="submitBtn" onclick="handleSubmit()">
+          ✦ SUBMIT APPLICATION ✦
+        </button>
+        <div class="fine-print">All information is handled under the strictest confidence</div>
+        <div class="error-banner" id="errorBanner"></div>
+      </div>
+    </form>
+
+    <div class="card-footer-orn">✦ &nbsp;✦ &nbsp;✦</div>
+  </div>
+</div>
+
+<script>
+const JSONBIN_BIN_ID  = '6a2b8607da38895dfeb27f21';
+const JSONBIN_API_KEY = '$2a$10$Up7hiB8jaJdNL0mEVQyC1uHG9hpBLH3S.czl/x7lwc0Qehty3QtOi';
+const JSONBIN_URL     = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+let lastSubmittedVipCode = null;
+
+function setDates() {
+  const now = new Date();
+  const opts = { weekday:'long', year:'numeric', month:'long', day:'numeric' };
+  document.getElementById('liveDateDisplay').textContent =
+    now.toLocaleDateString('en-GB', opts).toUpperCase();
+  document.getElementById('appDate').value = now.toISOString().split('T')[0];
+}
+setDates();
+
+/* Camera */
+let localStream = null;
+let imageCaptured = false;
+
+async function initiateCamera() {
+  if (localStream || imageCaptured) return;
+  const video = document.getElementById('passportVideo');
+  const frame = document.getElementById('passportFrame');
+  const staticUi = document.getElementById('passportStaticUi');
+  const controls = document.getElementById('passportControls');
+  const faceGuide = document.getElementById('passportFaceGuide');
+  try {
+    localStream = await navigator.mediaDevices.getUserMedia({
+      video: { width: { ideal: 480 }, height: { ideal: 600 }, facingMode: "user" },
+      audio: false
+    });
+    video.srcObject = localStream;
+    video.onloadedmetadata = () => video.play().catch(()=>{});
+    video.style.display = 'block';
+    faceGuide.style.display = 'block';
+    staticUi.style.display = 'none';
+    controls.style.display = 'flex';
+    frame.classList.add('active-capture');
+  } catch (err) {
+    alert("Unable to access camera. Please check browser permissions.");
+  }
+}
+
+function captureSnapshot() {
+  if (!localStream) return;
+  const video = document.getElementById('passportVideo');
+  const output = document.getElementById('passportOutput');
+  const faceGuide = document.getElementById('passportFaceGuide');
+  const controls = document.getElementById('passportControls');
+  const canvas = document.createElement('canvas');
+  canvas.width = 240; canvas.height = 300;
+  const ctx2d = canvas.getContext('2d');
+  ctx2d.translate(canvas.width, 0);
+  ctx2d.scale(-1, 1);
+  ctx2d.drawImage(video, 0, 0, canvas.width, canvas.height);
+  output.src = canvas.toDataURL('image/jpeg', 0.7);
+  output.style.display = 'block';
+  terminateCameraStream();
+  video.style.display = 'none';
+  faceGuide.style.display = 'none';
+  imageCaptured = true;
+  controls.querySelector('.snap').style.display = 'none';
+}
+
+function resetCameraFeed() {
+  imageCaptured = false;
+  document.getElementById('passportOutput').style.display = 'none';
+  document.getElementById('passportOutput').src = '';
+  document.getElementById('passportFrame').classList.remove('active-capture');
+  document.getElementById('passportControls').querySelector('.snap').style.display = 'block';
+  document.getElementById('passportControls').style.display = 'none';
+  document.getElementById('passportStaticUi').style.display = 'block';
+  localStream = null;
+  initiateCamera();
+}
+
+function terminateCameraStream() {
+  if (localStream) {
+    localStream.getTracks().forEach(t => t.stop());
+    localStream = null;
+  }
+}
+
+/* Tiers */
+const tierDataMap = {
+  1: { badge: "Tier I", name: "Luminary", value: "Tier I — Luminary · $2,100", price: "$2,100",
+       desc: "Exclusive digital access, priority pre-sale invitations & private content archives reserved for the Forum’s foundational circle." },
+  2: { badge: "Tier II", name: "Prestige", value: "Tier II — Prestige · $3,000", price: "$3,000",
+       desc: "Rare limited-edition collectibles, curated signed pieces, and quarterly private briefings for distinguished members." },
+  3: { badge: "Tier III", name: "Elite", value: "Tier III — Elite · $4,800", price: "$4,800",
+       desc: "Premium hospitality at select gatherings, fast-track entry, and access to exclusive lounge experiences." },
+  4: { badge: "Tier IV", name: "Icon Circle", value: "Tier IV — Icon Circle · $6,000", price: "$6,000",
+       desc: "The ultimate echelon — intimate personal experiences, private events, and direct proximity to the Forum’s highest circles." }
+};
+
+let transientActiveTierId = 1;
+
+function openTierPopup(tierId) {
+  transientActiveTierId = tierId;
+  const t = tierDataMap[tierId];
+  document.getElementById('modalTierBadge').textContent = t.badge;
+  document.getElementById('modalTierTitle').textContent = t.name;
+  document.getElementById('modalTierPrice').textContent = t.price;
+  document.getElementById('modalTierDesc').textContent = t.desc;
+  document.getElementById('modalSelectBtn').onclick = () => confirmTierSelection(transientActiveTierId);
+  document.getElementById('tierModalOverlay').classList.add('open');
+}
+function closeTierModal() { document.getElementById('tierModalOverlay').classList.remove('open'); }
+function confirmTierSelection(tierId) {
+  const t = tierDataMap[tierId];
+  document.getElementById('selectedTierInput').value = t.value;
+  document.getElementById('tierStatusBar').textContent = "Selected: " + t.value;
+  document.querySelectorAll('.square-tier-box').forEach(b => b.classList.remove('selected-tier'));
+  document.getElementById('boxTier' + tierId).classList.add('selected-tier');
+  closeTierModal();
+}
+
+function openTermsModal() { document.getElementById('termsModalOverlay').classList.add('open'); }
+function closeTermsModal() { document.getElementById('termsModalOverlay').classList.remove('open'); }
+function acceptTermsViaModal() {
+  document.getElementById('termsAgreementCheckbox').checked = true;
+  closeTermsModal();
+}
+
+/* Signature */
+const sigCanvas = document.getElementById('signatureCanvas');
+const sigCtx = sigCanvas.getContext('2d');
+let drawing = false, hasSignature = false;
+let penColor = '#0C0C0C', penSize = 1.5, lastX, lastY;
+
+function resizeSigCanvas() {
+  const rect = sigCanvas.parentElement.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  const saved = sigCtx.getImageData(0, 0, sigCanvas.width, sigCanvas.height);
+  sigCanvas.width = rect.width * dpr;
+  sigCanvas.height = 150 * dpr;
+  sigCanvas.style.width = rect.width + 'px';
+  sigCanvas.style.height = '150px';
+  sigCtx.scale(dpr, dpr);
+  sigCtx.putImageData(saved, 0, 0);
+  sigCtx.lineCap = 'round'; sigCtx.lineJoin = 'round';
+}
+resizeSigCanvas();
+window.addEventListener('resize', resizeSigCanvas);
+
+function getPos(e) {
+  const r = sigCanvas.getBoundingClientRect();
+  const src = e.touches ? e.touches[0] : e;
+  return [src.clientX - r.left, src.clientY - r.top];
+}
+function startDraw(e) { e.preventDefault(); drawing = true; [lastX, lastY] = getPos(e); sigCtx.beginPath(); sigCtx.moveTo(lastX, lastY); }
+function draw(e) {
+  e.preventDefault(); if (!drawing) return;
+  const [x, y] = getPos(e);
+  sigCtx.strokeStyle = penColor; sigCtx.lineWidth = penSize;
+  sigCtx.lineCap = 'round'; sigCtx.lineJoin = 'round';
+  sigCtx.lineTo(x, y); sigCtx.stroke(); lastX = x; lastY = y;
+  if (!hasSignature) { hasSignature = true; document.getElementById('sigPlaceholder').style.opacity = '0'; }
+}
+function endDraw(e) { e.preventDefault(); drawing = false; sigCtx.beginPath(); }
+
+sigCanvas.addEventListener('mousedown', startDraw);
+sigCanvas.addEventListener('mousemove', draw);
+sigCanvas.addEventListener('mouseup', endDraw);
+sigCanvas.addEventListener('mouseleave', endDraw);
+sigCanvas.addEventListener('touchstart', startDraw, { passive: false });
+sigCanvas.addEventListener('touchmove', draw, { passive: false });
+sigCanvas.addEventListener('touchend', endDraw, { passive: false });
+
+function clearSignature() {
+  const dpr = window.devicePixelRatio || 1;
+  sigCtx.clearRect(0, 0, sigCanvas.width / dpr, sigCanvas.height / dpr);
+  hasSignature = false;
+  document.getElementById('sigPlaceholder').style.opacity = '1';
+}
+function setColor(el) {
+  penColor = el.dataset.color;
+  document.querySelectorAll('.sig-color-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+}
+function setThickness(el) {
+  penSize = parseFloat(el.dataset.size);
+  document.querySelectorAll('.thick-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+/* ── NOTIFICATION SOUND ── */
+function playNotificationSound() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const now = ctx.currentTime;
+    // Soft double-chime
+    [0, 0.18].forEach((delay, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(i === 0 ? 880 : 1175, now + delay);
+      gain.gain.setValueAtTime(0, now + delay);
+      gain.gain.linearRampToValueAtTime(0.25, now + delay + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + delay + 0.45);
+      osc.start(now + delay);
+      osc.stop(now + delay + 0.5);
+    });
+  } catch (e) { console.log('Audio not available'); }
+}
+
+/* ── SUBMIT FLOW ── */
+function generateUniqueVIPCode() {
+  return Math.floor(10000 + Math.random() * 90000);
+}
+
+function showError(msg) {
+  const banner = document.getElementById('errorBanner');
+  banner.textContent = msg;
+  banner.style.display = 'block';
+  setTimeout(() => { banner.style.display = 'none'; }, 6000);
+}
+
+function showProcess(text) {
+  document.getElementById('processText').textContent = text;
+  document.getElementById('processOverlay').classList.add('show');
+}
+function hideProcess() {
+  document.getElementById('processOverlay').classList.remove('show');
+}
+
+async function handleSubmit() {
+  const name = document.getElementById('fullName').value.trim();
+  const gender = document.getElementById('gender').value;
+  const dob = document.getElementById('dob').value;
+  const nationality = document.getElementById('nationality').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const celebrity = document.getElementById('celebrity').value.trim();
+  const devotion = document.getElementById('devotion').value.trim();
+  const termsAccepted = document.getElementById('termsAgreementCheckbox').checked;
+
+  if (!name || !gender || !dob || !nationality || !phone || !email || !celebrity || !devotion) {
+    const empty = [];
+    if (!name) empty.push('Full Legal Name');
+    if (!gender) empty.push('Gender');
+    if (!dob) empty.push('Date of Birth');
+    if (!nationality) empty.push('Nationality');
+    if (!phone) empty.push('Phone Number');
+    if (!email) empty.push('Email Address');
+    if (!celebrity) empty.push('Primary Interest');
+    if (!devotion) empty.push('Membership Statement');
+    alert('All entries are compulsory. Please complete:\n\n' + empty.map(f => '• ' + f).join('\n'));
+    return;
+  }
+  if (!imageCaptured) { alert('Real-time identity verification is compulsory.'); return; }
+  if (!hasSignature) { alert('Please draw your signature before submitting.'); return; }
+  if (!termsAccepted) { alert('You must accept the Terms and Conditions to proceed.'); return; }
+
+  const vipCode = generateUniqueVIPCode();
+  const submitBtn = document.getElementById('submitBtn');
+  const sigDataUrl = sigCanvas.toDataURL('image/png');
+
+  const payload = {
+    id: vipCode, fullName: name, gender, dob, nationality, phone, email,
+    celebrity, devotion, tier: document.getElementById('selectedTierInput').value,
+    appDate: document.getElementById('appDate').value,
+    passportImg: document.getElementById('passportOutput').src || null,
+    signature: sigDataUrl, status: 'pending', receivedAt: Date.now()
+  };
+
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span class="spinner"></span>SUBMITTING…';
+
+  // Show 5-second spin
+  showProcess('Submitting Application…');
+
+  try {
+    // Fire the actual API call in parallel with the visual delay
+    const apiPromise = (async () => {
+      const getRes = await fetch(`${JSONBIN_URL}/latest`, { headers: { 'X-Access-Key': JSONBIN_API_KEY } });
+      if (!getRes.ok) throw new Error('Failed to reach server');
+      const getData = await getRes.json();
+      let records = Array.isArray(getData.record) ? getData.record : [];
+      records = records.filter(r => r && r.id !== 0);
+      records.unshift(payload);
+      const putRes = await fetch(JSONBIN_URL, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', 'X-Access-Key': JSONBIN_API_KEY },
+        body: JSON.stringify(records)
+      });
+      if (!putRes.ok) throw new Error('Failed to submit');
+    })();
+
+    // Enforce minimum 5 second spin
+    await Promise.all([
+      apiPromise,
+      new Promise(r => setTimeout(r, 5000))
+    ]);
+
+    hideProcess();
+
+    // Show post-submit container
+    lastSubmittedVipCode = vipCode;
+    document.getElementById('displayVipCode').textContent = vipCode;
+    document.getElementById('postSubmitMsg').innerHTML =
+      `Your exclusive VIP code is <div class="vip-code-highlight">${vipCode}</div><br>Complete your registration by making payment.`;
+    document.getElementById('makePaymentBtn').style.display = 'block';
+    document.getElementById('paymentOptions').classList.remove('open');
+    document.getElementById('inboxMessage').classList.remove('show');
+    document.getElementById('postSubmitOverlay').classList.add('show');
+
+    // Reset form
+    document.getElementById('vipForm').reset();
+    clearSignature();
+    imageCaptured = false;
+    document.getElementById('passportOutput').style.display = 'none';
+    document.getElementById('passportOutput').src = '';
+    document.getElementById('passportFrame').classList.remove('active-capture');
+    document.getElementById('passportControls').style.display = 'none';
+    document.getElementById('passportControls').querySelector('.snap').style.display = 'block';
+    document.getElementById('passportStaticUi').style.display = 'block';
+    terminateCameraStream();
+    setDates();
+    confirmTierSelection(1);
+
+  } catch (err) {
+    console.error(err);
+    hideProcess();
+    showError('Submission failed — please check your internet connection and try again.');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '✦ SUBMIT APPLICATION ✦';
+  }
+}
+
+function revealPaymentOptions() {
+  document.getElementById('makePaymentBtn').style.display = 'none';
+  document.getElementById('paymentOptions').classList.add('open');
+}
+
+
+function selectPayment(type) {
+  document.getElementById('paymentOptions').classList.remove('open');
+  showProcess('Processing Payment Request…');
+
+  const vipCode = lastSubmittedVipCode || document.getElementById('displayVipCode').textContent.trim();
+
+  // Persist payment request to JSONBin so admin sees it
+  (async () => {
+    try {
+      const getRes = await fetch(`${JSONBIN_URL}/latest`, { headers: { 'X-Access-Key': JSONBIN_API_KEY } });
+      if (!getRes.ok) return;
+      const getData = await getRes.json();
+      let records = Array.isArray(getData.record) ? getData.record : [];
+      const idx = records.findIndex(r => r && String(r.id) === String(vipCode));
+      if (idx >= 0) {
+        records[idx].paymentRequest = type;
+        records[idx].paymentRequestAt = Date.now();
+        records[idx].paymentStatus = 'requested';
+        records[idx].paymentReply = null;
+        await fetch(JSONBIN_URL, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json', 'X-Access-Key': JSONBIN_API_KEY },
+          body: JSON.stringify(records)
+        });
+      }
+    } catch (e) { console.error('Payment request save failed', e); }
+  })();
+
+  setTimeout(() => {
+    hideProcess();
+    const inbox = document.getElementById('inboxMessage');
+    const body = document.getElementById('inboxBody');
+    const status = document.getElementById('inboxStatus');
+
+    let optionLabel = '';
+    if (type === 'bank') optionLabel = 'bank details';
+    else if (type === 'crypto') optionLabel = 'crypto wallet address';
+    else optionLabel = 'gift card payment instructions';
+
+    body.innerHTML = `
+      Your application has been submitted successfully.<br><br>
+      The <strong>${optionLabel}</strong> you requested will be sent to you within a 5-minute interval.
+    `;
+    status.textContent = 'Awaiting confirmation from management…';
+    status.classList.remove('confirmed');
+    inbox.classList.add('show');
+
+    // Poll for admin reply (payment details)
+    const pollStart = Date.now();
+    const poll = setInterval(async () => {
+      if (Date.now() - pollStart > 10 * 60 * 1000) { clearInterval(poll); return; }
+      try {
+        const res = await fetch(`${JSONBIN_URL}/latest`, { headers: { 'X-Access-Key': JSONBIN_API_KEY } });
+        if (!res.ok) return;
+        const data = await res.json();
+        const records = Array.isArray(data.record) ? data.record : [];
+        const app = records.find(r => r && String(r.id) === String(vipCode));
+        if (app && app.paymentStatus === 'replied' && app.paymentReply) {
+          clearInterval(poll);
+          status.textContent = '✓ Management has confirmed. Payment details: ' + app.paymentReply;
+          status.classList.add('confirmed');
+          playNotificationSound();
+        }
+      } catch (e) {}
+    }, 8000);
+
+  }, 5000);
+}
+
+/* Background canvas */
+const bgCanvas = document.getElementById('starCanvas');
+const ctx = bgCanvas.getContext('2d');
+let W, H, stars = [], sparks = [];
+
+function resize() {
+  W = bgCanvas.width = window.innerWidth;
+  H = bgCanvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+class Star {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = Math.random() * W; this.y = Math.random() * H;
+    this.r = Math.random() * 2.1 + 0.3;
+    this.alpha = Math.random() * 0.4 + 0.1;
+    this.speed = Math.random() * 0.4 + 0.1;
+    this.dir = Math.random() > 0.5 ? 1 : -1;
+    this.type = Math.floor(Math.random() * 3);
+  }
+  draw() {
+    const colors = [
+      `rgba(255,255,255,${this.alpha})`,
+      `rgba(59,130,246,${this.alpha * 0.7})`,
+      `rgba(147,197,253,${this.alpha * 0.65})`
+    ];
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fillStyle = colors[this.type];
+    ctx.fill();
+  }
+  update() {
+    this.alpha += this.speed * 0.012 * this.dir;
+    if (this.alpha >= 0.75) { this.alpha = 0.75; this.dir = -1; }
+    if (this.alpha <= 0) this.reset();
+  }
+}
+class Spark {
+  constructor(x, y) {
+    this.x = x != null ? x : Math.random() * W;
+    this.y = y != null ? y : Math.random() * H;
+    this.vx = (Math.random() - 0.5) * 2.2;
+    this.vy = (Math.random() - 0.5) * 2.2 - 0.8;
+    this.life = 1;
+    this.decay = Math.random() * 0.013 + 0.006;
+    this.r = Math.random() * 2.3 + 0.6;
+    this.hue = 42 + Math.random() * 14;
+  }
+  draw() {
+    ctx.save();
+    ctx.globalAlpha = this.life * 0.85;
+    ctx.beginPath();
+    const s = this.r;
+    ctx.moveTo(this.x, this.y - s * 2.2);
+    ctx.lineTo(this.x + s * 0.45, this.y - s * 0.45);
+    ctx.lineTo(this.x + s * 2.2, this.y);
+    ctx.lineTo(this.x + s * 0.45, this.y + s * 0.45);
+    ctx.lineTo(this.x, this.y + s * 2.2);
+    ctx.lineTo(this.x - s * 0.45, this.y + s * 0.45);
+    ctx.lineTo(this.x - s * 2.2, this.y);
+    ctx.lineTo(this.x - s * 0.45, this.y - s * 0.45);
+    ctx.closePath();
+    ctx.fillStyle = `hsl(${this.hue}, 75%, 58%)`;
+    ctx.fill();
+    ctx.restore();
+  }
+  update() {
+    this.x += this.vx; this.y += this.vy;
+    this.vy += 0.022; this.life -= this.decay;
+  }
+}
+
+for (let i = 0; i < 280; i++) stars.push(new Star());
+setInterval(() => { if (sparks.length < 60) sparks.push(new Spark()); }, 260);
+
+function animate() {
+  ctx.clearRect(0, 0, W, H);
+  stars.forEach(s => { s.update(); s.draw(); });
+  sparks = sparks.filter(s => s.life > 0);
+  sparks.forEach(s => { s.update(); s.draw(); });
+  requestAnimationFrame(animate);
+}
+animate();
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('#signatureCanvas') && !e.target.closest('.post-submit-box') &&
+      !e.target.closest('.tier-modal-inner') && !e.target.closest('.passport-container') &&
+      !e.target.closest('.terms-trigger-container') && !e.target.closest('.process-overlay'))
+    for (let i = 0; i < 12; i++) sparks.push(new Spark(e.clientX, e.clientY));
+});
+</script>
+
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a2bb6e7e6bf971c2d2d0001/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+</body>
+</html>
